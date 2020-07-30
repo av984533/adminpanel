@@ -1,90 +1,24 @@
+<div class="container">
+    <form [formGroup]="loginForm">
+        <h1>Login</h1>
+        
 
-<table style="width:100%">
-    <tr>
-      <th>categery</th>
-      <th>category_name_hyphen</th> 
-      <th>dateTime</th>
-      <th>id</th>
-      <th>message</th>
-      <th>price</th>
-      <th>status</th>
-      <th>stockName</th>
-      <th>stockSignal</th>
-      <th>stockSymbol</th>
-      <th>stopLoss</th>
-      <th>targetPrice</th>
-      <th>tradingViewSymbol</th>
-      <th>type</th>
-    </tr>
-    <tr>
-      <td><div *ngFor="let listItems of data">
+        <label for="sort"><b>Sort</b></label>
+        <input type="text" placeholder="Enter value" name="sort" id="sort" required formControlName="sort">
+        <div *ngFor="let listItems of data">
 
-        <p>{{listItems.category}} </p>
-    </div></td>
+            <p>{{listItems.sort}} </p>
+        </div>
+        
+            
 
-      <td><div *ngFor="let listItems of data">
+        <label for="psw"><b>filters</b></label>
+        <input type="filters" placeholder="enter filters" name="filters" id="filters" required formControlName="filters" >
+        <div *ngFor="let listItems of data">
+          <p>{{listItems.filters}}</p>
+        </div>
+        
+        <button type="submit" class="registerbtn" (click)="doLogin()">find</button>
+    </form>
+</div>
 
-        <p>{{listItems.category_name_hyphen}} </p>
-    </div></td>
-
-      <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.dateTime}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.id}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.message}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.price}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.status}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.stockName}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.stockSignal}} </p>
-    </div></td>
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.stockSymbol}} </p>
-    </div></td>
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.stopLoss}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.targetPrice}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.tradingViewSymbol}} </p>
-    </div></td>
-
-    <td><div *ngFor="let listItems of data">
-
-        <p>{{listItems.type}} </p>
-    </div></td>
-
-    </tr>
-    
-  </table>

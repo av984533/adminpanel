@@ -5,19 +5,35 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+
 const routes: Routes =[
   {
-    path: '',
-    redirectTo: 'dashboard',
+    path: 'login',
+    component: LoginComponent,
     pathMatch: 'full',
-  }, {
+  },
+   
+  {
+    path: '',
+    component: LoginComponent,
+    pathMatch: 'full',
+  },
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [{
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
-  }
+  },
+
+  {
+    path: 'signup',
+    component: SignupComponent,
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
